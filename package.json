@@ -1,0 +1,30 @@
+{
+  "name": "react-clock",
+  "version": "0.1.0",
+  "description": "Simple project that renders a clicker at the screen. For training purposes.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html",
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fpaguiar/react-clock.git"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "training",
+    "example"
+  ],
+  "author": "Felipe Pimentel de Aguiar <felipe.pimentel.aguiar@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fpaguiar/react-clock/issues"
+  },
+  "homepage": "https://github.com/fpaguiar/react-clock#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.6.2"
+  }
+}
