@@ -3,6 +3,7 @@ import moment from 'moment';
 import { updateTime } from './../../actions/actions';
 import { connect } from 'react-redux';
 import ClockOptions from './components/ClockOptions/ClockOptions';
+import './Clock.css';
 
 class Clock extends React.Component {
 	constructor(props) {
@@ -27,7 +28,7 @@ class Clock extends React.Component {
 		return (
 			<div className="clock">
 				<ClockOptions />
-				<div className="content">{this.props.time}</div>
+				<div className="clock__content">{this.props.time}</div>
 			</div>
 		);
 	}

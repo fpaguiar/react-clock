@@ -7,4 +7,4 @@ export const updateTime = time => {
 			time
 		}
 	};
-}
+};
