@@ -1,5 +1,6 @@
 import * as React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import { updateTime } from './../../actions/actions';
 import { connect } from 'react-redux';
 import ClockOptions from './components/ClockOptions/ClockOptions';
@@ -33,6 +34,11 @@ class Clock extends React.Component {
 		);
 	}
 }
+
+Clock.propTypes = {
+	updateTime: PropTypes.func,
+	time: PropTypes.string
+};
 
 function mapStateToProps(state) {
 	return state;
