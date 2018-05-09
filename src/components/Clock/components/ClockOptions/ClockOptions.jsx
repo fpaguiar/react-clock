@@ -1,10 +1,18 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { showSeconds } from './../../../../actions/actions';
 import './ClockOptions.css';
 
 class ClockOptions extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this._handleSecondsCheck = this._handleSecondsCheck.bind(this);
+	}
+
+	_handleSecondsCheck({target}) {
+		return this.props.showSeconds(target.checked);
 	}
 
 	render() {
@@ -17,7 +25,7 @@ class ClockOptions extends React.Component {
 					</li>
 					<li className="clock-option">
 						<label htmlFor="cbSeconds">Show Seconds</label>
-						<input type="checkbox" name="cbSeconds" id="cbSeconds"/>
+						<input type="checkbox" name="cbSeconds" id="cbSeconds" onChange={this._handleSecondsCheck}/>
 					</li>
 				</ul>
 			</div>
@@ -25,8 +33,12 @@ class ClockOptions extends React.Component {
 	}
 }
 
-function mapStateToProps(state) {
-	return state;
+ClockOptions.propTypes = {
+	showSeconds: PropTypes.func
+};
+
+function mapStateToProps({showSeconds}) {
+	return {showSeconds};
 }
 
-export default connect(mapStateToProps, {})(ClockOptions);
+export default connect(mapStateToProps, { showSeconds })(ClockOptions);
