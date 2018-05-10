@@ -22,17 +22,25 @@ class ClockOptions extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<ul className="clock-options">
-					<li className="clock-option">
-						<label htmlFor="cbDate">Show Date</label>
-						<input type="checkbox" name="cbDate" id="cbDate" onChange={this._handleDateCheck}/>
-					</li>
-					<li className="clock-option">
-						<label htmlFor="cbSeconds">Show Seconds</label>
-						<input type="checkbox" name="cbSeconds" id="cbSeconds" onChange={this._handleSecondsCheck}/>
-					</li>
-				</ul>
+			<div className="clock-options">
+				<div className="label-wrapper">
+					<div className="switch">
+						<input type="checkbox" name="cbDate" id="cbDate" onChange={this._handleDateCheck} />
+						<label htmlFor="cbDate">
+							<div></div>
+						</label>
+					</div>
+					<div>Show Date</div>
+				</div>
+				<div className="label-wrapper">
+					<div className="switch">
+						<input type="checkbox" name="cbSeconds" id="cbSeconds" onChange={this._handleSecondsCheck} />
+						<label htmlFor="cbSeconds">
+							<div></div>
+						</label>
+					</div>
+					<div>Show Seconds</div>
+				</div>
 			</div>
 		);
 	}

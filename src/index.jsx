@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers/reducers';
 import Clock from './components/Clock/Clock';
+import './index.css';
 
 const store = createStore(reducers, {});
 
