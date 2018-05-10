@@ -12,6 +12,7 @@ class Clock extends React.Component {
 
 		this.intervalID = 0;
 		this.time = this._getTime();
+		this.date = this._getDate();
 	}
 
 	_getTime() {
@@ -25,12 +26,13 @@ class Clock extends React.Component {
 	componentDidMount() {
 		this.intervalID = setInterval(() => {
 			this.props.updateTime(this._getTime());
-			this.props.shouldShowDate && this.props.updateDate(this._getDate());
+			this.props.updateDate(this._getDate());
 		}, 1000);
 	}
 
 	componentDidUpdate() {
 		this.time = this.props.time;
+		this.date = this.props.date;
 	}
 
 	componentWillUnmount() {
@@ -43,7 +45,7 @@ class Clock extends React.Component {
 				<ClockOptions />
 				<div className="clock__content">
 					<div>{this.time.format(this.props.shouldShowSeconds ? 'hh:mm:ss' : 'hh:mm')}</div>
-					<div>{this.props.shouldShowDate && this.props.date}</div>
+					<div>{this.props.shouldShowDate && this.date}</div>
 				</div>
 			</div>
 		);
@@ -53,7 +55,7 @@ class Clock extends React.Component {
 Clock.propTypes = {
 	updateTime: PropTypes.func,
 	updateDate: PropTypes.func,
-	time: PropTypes.string,
+	time: PropTypes.object,
 	date: PropTypes.string,
 	shouldShowSeconds: PropTypes.bool,
 	shouldShowDate: PropTypes.bool
